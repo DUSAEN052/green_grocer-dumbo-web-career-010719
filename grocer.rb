@@ -19,7 +19,9 @@ def apply_coupons(cart, coupons)
   output = {}
   
   cart.each do |item, info|
-  
+    if coupons.key?(item)
+      discount = coupons[item]
+      output[item + " W/COUPON"] = 
 end
 
 def apply_clearance(cart)
