@@ -3,7 +3,7 @@ def consolidate_cart(cart)
   output = {}
   
   cart.each do |item, info|
-    output[item] = info
+    
     
   
 end
