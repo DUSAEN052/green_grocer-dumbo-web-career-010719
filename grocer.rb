@@ -2,7 +2,9 @@ def consolidate_cart(cart)
   # code here
   output = {}
   
-  
+  cart.each do |item, info|
+    output[item] = info
+    
   
 end
 
