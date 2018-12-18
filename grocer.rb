@@ -16,6 +16,10 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
+  output = {}
+  
+  cart.each do |item, info|
+  
 end
 
 def apply_clearance(cart)
