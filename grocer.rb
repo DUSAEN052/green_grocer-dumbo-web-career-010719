@@ -19,7 +19,7 @@ end
 def apply_coupons(cart, coupons)
   # code here
   if coupons.length == 0
-    return
+    return cart
   end
   output = {}
   #puts "#{cart}, #{coupons}"
