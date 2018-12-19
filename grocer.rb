@@ -26,7 +26,7 @@ def apply_coupons(cart, coupons)
   cart.each do |item, info|
     
     coupons.each do |coupon|
-      if coupon[:item] == item and coupon[:num] <= info[:count]
+      if coupon[:item] == item and coupon[:num] <= info[:count] and output.key?(output[item + " W/COUPON"]) == false
         output[item + " W/COUPON"] = {
           :price => coupon[:cost],
           :clearance => info[:clearance],
@@ -34,6 +34,8 @@ def apply_coupons(cart, coupons)
         }
          #puts "#{cart[item][:count]}, #{info[:count]}"
         cart[item][:count] -= coupon[:num]
+      elsif output.key?(output[item + " W/COUPON"])
+        output[item + " W/COUPON"][:count] += 1
       end
       #puts "#{cart[item][:count]}"
       if cart[item][:count] >= 0
