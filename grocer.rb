@@ -10,7 +10,7 @@ def consolidate_cart(cart)
       output[item][:count] = 1
     end
   end
-  puts output
+
   return output
 end
 
