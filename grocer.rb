@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
           :count => coupon[:num]
         }
          #puts "#{cart[item][:count]}, #{info[:count]}"
-        cart[item][:count] -= coupon[:num]
+        cart[item][:count] -= cart[item][:count] - coupon[:num]
       
       elsif output.key?(output[item + " W/COUPON"])
         output[item + " W/COUPON"][:count] += coupon[:num]
