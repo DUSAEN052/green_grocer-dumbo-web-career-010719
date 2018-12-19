@@ -21,20 +21,21 @@ def apply_coupons(cart, coupons)
   output = {}
 
   cart.each do |item, info|
-    puts "#{item}, #{info}, #{coupons}"
-    if coupons[:item] == item and coupons[:num] <= info[:count]
-      output[item + " W/COUPON"] = {
-        :price => coupons[:cost],
-        :clearance => info[:clearance],
-        :count => info[:count] / coupons[:num]
-      }
-      cart[item][:count] -= info[:count]
+    #puts "#{item}, #{info}, #{coupons}"
+    coupons.each do |coupon|
+      if coupon[:item] == item and coupon[:num] <= info[:count]
+        output[item + " W/COUPON"] = {
+          :price => coupon[:cost],
+          :clearance => info[:clearance],
+          :count => info[:count] / coupon[:num]
+        }
+        cart[item][:count] -= info[:count]
+      end
+      
+      if cart[item][:count] > 0
+        output[item] = info
+      end
     end
-    
-    if cart[item][:count] > 0
-      output[item] = info
-    end
-  
   end
 
   output
