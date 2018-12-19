@@ -31,10 +31,10 @@ def apply_coupons(cart, coupons)
         output[item + " W/COUPON"] = {
           :price => coupon[:cost],
           :clearance => info[:clearance],
-          :count => coupon[:num]
+          :count => cart[item][:count] - coupon[:num]
         }
          #puts "#{cart[item][:count]}, #{info[:count]}"
-        cart[item][:count] -= cart[item][:count] - coupon[:num]
+        cart[item][:count] -= coupon[:num]
       
       elsif output.key?(output[item + " W/COUPON"])
         output[item + " W/COUPON"][:count] += coupon[:num]
