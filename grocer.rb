@@ -19,7 +19,7 @@ end
 def apply_coupons(cart, coupons)
   # code here
   output = {}
-  puts coupons
+  puts cart
   cart.each do |item, info|
     if coupons[:item] == item and coupons[:num] <= info[:count]
       output[item + " W/COUPON"] = {
