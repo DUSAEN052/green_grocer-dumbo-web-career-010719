@@ -18,7 +18,7 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  if coupons == NIL
+  if coupons.empty
     return
   output = {}
   #puts "#{cart}, #{coupons}"
