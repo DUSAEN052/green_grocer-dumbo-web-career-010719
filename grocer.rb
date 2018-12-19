@@ -19,7 +19,7 @@ end
 def apply_coupons(cart, coupons)
   # code here
   output = {}
-
+  puts "#{cart}, #{coupons}"
   cart.each do |item, info|
     
     coupons.each do |coupon|
