@@ -36,6 +36,7 @@ def apply_coupons(cart, coupons)
         cart[item][:count] -= coupon[:num]
       
       elsif output.key?(output[item + " W/COUPON"])
+      puts "AAAAAAAAAAA"
         output[item + " W/COUPON"][:count] += 1
       end
 
