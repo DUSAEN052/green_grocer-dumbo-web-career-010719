@@ -22,7 +22,7 @@ def apply_coupons(cart, coupons)
     return cart
   end
   output = {}
-  #puts "#{cart}, #{coupons}"
+  puts "#{cart}, #{coupons}"
   cart.each do |item, info|
     
     coupons.each do |coupon|
@@ -34,6 +34,7 @@ def apply_coupons(cart, coupons)
         }
          #puts "#{cart[item][:count]}, #{info[:count]}"
         cart[item][:count] -= coupon[:num]
+      
       elsif output.key?(output[item + " W/COUPON"])
         output[item + " W/COUPON"][:count] += 1
       end
