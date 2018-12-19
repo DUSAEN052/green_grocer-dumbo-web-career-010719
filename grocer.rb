@@ -2,11 +2,11 @@ def consolidate_cart(cart)
   # code here
   output = {}
   
-  cart.each do |item, info|
+  cart.each do |item|
     if output.key?(item)
       output[item][:count] += 1
     else
-      output[item] = info
+      output[item] = 
       output[item].merge(:count => 1)
     end
   end
