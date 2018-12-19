@@ -18,7 +18,7 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  if not coupons
+  if coupons.length == 0
     return
   end
   output = {}
