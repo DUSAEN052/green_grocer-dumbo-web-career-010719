@@ -7,7 +7,7 @@ def consolidate_cart(cart)
       output[item][:count] += 1
     else
       output[item] = info
-      output[item][:count] = 1
+      output[item].merge(:count => 1)
     end
   end
 
