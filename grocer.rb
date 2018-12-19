@@ -31,7 +31,7 @@ def apply_coupons(cart, coupons)
         }
         cart[item][:count] -= info[:count]
       end
-      puts "#{cart[item][:count]}"
+
       if cart[item][:count] >= 0
         output[item] = info
       end
