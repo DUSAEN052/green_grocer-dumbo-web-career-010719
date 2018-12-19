@@ -20,6 +20,7 @@ def apply_coupons(cart, coupons)
   # code here
   if coupons.empty?
     return
+  end
   output = {}
   #puts "#{cart}, #{coupons}"
   cart.each do |item, info|
