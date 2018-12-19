@@ -19,7 +19,7 @@ end
 def apply_coupons(cart, coupons)
   # code here
   output = {}
-  puts "#{cart}, #{coupons}"
+  #puts "#{cart}, #{coupons}"
   cart.each do |item, info|
     
     coupons.each do |coupon|
@@ -29,10 +29,10 @@ def apply_coupons(cart, coupons)
           :clearance => info[:clearance],
           :count => info[:count] / coupon[:num]
         }
-         puts "#{cart[item][:count]}, #{info[:count]}"
-        cart[item][:count] -= info[:count]
+         #puts "#{cart[item][:count]}, #{info[:count]}"
+        cart[item][:count] -= coupon[:num]
       end
-      puts "#{cart[item][:count]}"
+      #puts "#{cart[item][:count]}"
       if cart[item][:count] >= 0
         output[item] = info
       end
