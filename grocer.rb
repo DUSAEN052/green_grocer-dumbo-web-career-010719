@@ -3,14 +3,16 @@ def consolidate_cart(cart)
   output = {}
   
   cart.each do |item|
-    if output.key?(item)
-      output[item][:count] += 1
-    else
-      output[item] = 
-      output[item].merge(:count => 1)
+    item.each do |key, value|
+      if output.key?(key)
+        output[key][:count] += 1
+      else
+        output[key] = value
+        output[key].merge!({:count => 1})
+      end
     end
   end
-
+  
   return output
 end
 
