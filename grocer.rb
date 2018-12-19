@@ -37,10 +37,11 @@ def apply_coupons(cart, coupons)
       elsif output.key?(output[item + " W/COUPON"])
         output[item + " W/COUPON"][:count] += 1
       end
-      #puts "#{cart[item][:count]}"
+
       if cart[item][:count] >= 0
         output[item] = info
       end
+    
     end
   end
   
