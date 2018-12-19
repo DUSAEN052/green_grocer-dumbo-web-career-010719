@@ -5,14 +5,12 @@ def consolidate_cart(cart)
   cart.each do |item, info|
     if output.key?(item)
       output[item][:count] += 1
-      puts output
     else
       output[item] = info
       output[item][:count] = 1
-      puts output
     end
   end
-
+  puts output
   return output
 end
 
