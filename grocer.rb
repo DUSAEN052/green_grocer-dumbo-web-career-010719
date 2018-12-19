@@ -18,6 +18,8 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
+  if coupons == NIL
+    return
   output = {}
   #puts "#{cart}, #{coupons}"
   cart.each do |item, info|
